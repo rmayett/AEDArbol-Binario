@@ -7,6 +7,7 @@ public:
 	bool AddNodo(int Dato);
 	bool AddRec(int Dato,Nodo* aux);
 	bool Elim(int ref);
+	void intercambiar(Nodo* a,Nodo* aux);
 	Nodo* Buscar(int ref);
 	Nodo* BusqRec(int ref,Nodo* aux);
 	~Arbol();
