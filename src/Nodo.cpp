@@ -1,3 +1,5 @@
+/*Rodrigo Mayett Guzman
+se definen los metodos del arbol*/
 #include "Nodo.h"
 
 Nodo::Nodo(int Dato){

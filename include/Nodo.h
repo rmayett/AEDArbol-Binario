@@ -1,3 +1,5 @@
+/*Rodrigo Mayett Guzman
+se definen los metodos de la clase*/
 #include <iostream>
 class Nodo
 {

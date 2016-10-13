@@ -1,3 +1,5 @@
+/*Rodrigo Mayett Guzman
+se definen los metodos del arbol*/
 #include "Arbol.h"
 
 Arbol::Arbol(Nodo* Raiz){
@@ -9,6 +11,20 @@ bool Arbol::AddNodo(int Dato){
 		return true;
 	}
 	return AddRec(Dato,Raiz);
+}
+void Arbol::Crear(){
+	Arbol ar(6);
+	ar.AddNodo(9);
+	ar.AddNodo(10);
+	ar.AddNodo(2);
+	ar.AddNodo(5);
+	ar.AddNodo(8);
+	ar.AddNodo(12);
+	ar.AddNodo(7);
+	ar.AddNodo(11);	
+	ar.AddNodo(20);
+	ar.AddNodo(19);
+	ar.AddNodo(18);
 }
 bool Arbol::AddRec(int Dato,Nodo* aux){
 	bool Res;

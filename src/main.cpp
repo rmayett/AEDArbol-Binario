@@ -1,7 +1,8 @@
 #include "Arbol.h"
 
-int main(int argc, char const *argv[])
+main()
 {
+
 	
 	return 0;
 }
