@@ -2,8 +2,8 @@
 se definen los metodos del arbol*/
 #include "Arbol.h"
 
-Arbol::Arbol(Nodo* Raiz){
-	this->Raiz=Raiz;
+Arbol::Arbol(int Dato){
+	this->Raiz= new Nodo(Dato);
 }
 bool Arbol::AddNodo(int Dato){
 	if (Buscar(Dato)!=NULL)
@@ -12,19 +12,19 @@ bool Arbol::AddNodo(int Dato){
 	}
 	return AddRec(Dato,Raiz);
 }
-void Arbol::Crear(){
-	Arbol ar(6);
-	ar.AddNodo(9);
-	ar.AddNodo(10);
-	ar.AddNodo(2);
-	ar.AddNodo(5);
-	ar.AddNodo(8);
-	ar.AddNodo(12);
-	ar.AddNodo(7);
-	ar.AddNodo(11);	
-	ar.AddNodo(20);
-	ar.AddNodo(19);
-	ar.AddNodo(18);
+void Arbol::Crear()
+{
+	AddNodo(9);
+	AddNodo(10);
+	AddNodo(2);
+	AddNodo(5);
+	AddNodo(8);
+	AddNodo(12);
+	AddNodo(7);
+	AddNodo(11);	
+	AddNodo(20);
+	AddNodo(19);
+	AddNodo(18);
 }
 bool Arbol::AddRec(int Dato,Nodo* aux){
 	bool Res;
@@ -141,4 +141,66 @@ Nodo* Arbol::BusqRec(int ref,Nodo* aux){
 		return Res;
 	}
 	return NULL;
+}
+
+
+void Arbol::imprimir()
+{
+		
+	if (Raiz==NULL)
+	{
+		std::cout<<"NO HAY NINGUN ELEMENTO "<<std::endl;
+	}
+	
+	std::cout<<Raiz->getDato()<<std::endl;
+	return imprimirRec(Raiz);
+
+}
+
+void Arbol::imprimirRec(Nodo* aux)
+{
+	Nodo* Busqueda=aux;
+	
+	if (Busqueda->Hder==NULL&&Busqueda->Hizq==NULL)
+	{
+		std::cout<<"SOLO EXISTE LA RAIZ"<<std::endl;
+	}
+	if (Busqueda->Hizq!=NULL)
+	{
+		while(Busqueda->Hizq!=NULL)
+		{
+		ImpIzq(Busqueda->Hizq);
+		ImpDer(Busqueda->Hizq);
+		Busqueda=Busqueda->Hizq;
+		}
+	}
+	else{if (Busqueda->Hder!=NULL)
+	{
+		while(Busqueda->Hder!=NULL){
+		ImpIzq(Busqueda->Hder);
+		ImpDer(Busqueda->Hder);
+		Busqueda=Busqueda->Hder;
+		}
+	}
+	}
+
+}
+void Arbol::ImpIzq(Nodo* aux)
+{
+	while(aux->Hizq!=NULL)
+	{
+		std::cout<<aux->Hizq->getDato()<<std::endl;
+		aux=aux->Hizq;
+	}
+}
+void Arbol::ImpDer(Nodo* aux)
+{
+
+	std::cout<<"\t"<<" ";
+	while(aux->Hder!=NULL)
+	{
+		std::cout<<"\t"<<" ";
+		std::cout<<aux->Hder->getDato()<<std::endl;
+		aux=aux->Hder;
+	}
 }

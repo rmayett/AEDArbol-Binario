@@ -5,13 +5,19 @@ class Arbol
 {
 public:
 	Nodo* Raiz;
-	Arbol(Nodo* Raiz);
+	Arbol(int Dato);
 	bool AddNodo(int Dato);
+	void Crear();
 	bool AddRec(int Dato,Nodo* aux);
 	bool Elim(int ref);
-	void Crear(int Raiz);
 	void intercambiar(Nodo* a,Nodo* aux);
 	Nodo* Buscar(int ref);
 	Nodo* BusqRec(int ref,Nodo* aux);
-	~Arbol();
+	void imprimir();
+
+private: 
+	void imprimirRec(Nodo* aux);
+	void ImpIzq(Nodo* aux);
+	void ImpDer(Nodo* aux);
+	//~Arbol();
 };
