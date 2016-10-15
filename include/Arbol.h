@@ -14,7 +14,7 @@ public:
 	void intercambiar(Nodo* a,Nodo* aux);
 	Nodo* Buscar(int ref);
 	Nodo* BusqRec(int ref,Nodo* aux);
-	//void imprimir();
-	//void imprimirRec(Nodo* aux);
+	void imprimir();
+	void imprimirRec(Nodo* aux);
 	//~Arbol();
 };

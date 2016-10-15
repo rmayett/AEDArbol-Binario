@@ -142,11 +142,11 @@ Nodo* Arbol::BusqRec(int ref,Nodo* aux){
 	return NULL;
 }
 
-/*
+
 void Arbol::imprimir()
 {
 		
-	if (this->Raiz==NULL)
+	if(this->Raiz==NULL)
 	{
 		std::cout<<"NO HAY NINGUN ELEMENTO "<<std::endl;
 	}
@@ -157,21 +157,24 @@ void Arbol::imprimir()
 }
 void Arbol::imprimirRec(Nodo* aux)
 {
-	Nodo*imp=aux;
-	if (imp->Hder!=NULL&&imp->Hizq!=NULL)
+	if(aux->Hizq!=NULL)
 	{
-		std::cout<<"\t"<<imp->Hizq->getDato()<<" ";
+		std::cout<<"\t"<<aux->Hizq->getDato()<<" ";
 		std::cout<<"\t"<<" ";
-		std::cout<<imp->Hder->getDato()<<std::endl;		
 	}
-	if (imp->Hder!=NULL)
+	if(aux->Hder!=NULL)
+	{
+		std::cout<<"\t"<<" ";
+		std::cout<<aux->Hder->getDato()<<std::endl;		
+	}
+	if (aux->Hizq!=NULL)
 	{		
-	imprimirRec(imp->Hder);
+	imprimirRec(aux->Hizq);
 	}
 
-	if (imp->Hizq!=NULL)
+	if (aux->Hder!=NULL)
 	{		
-	imprimirRec(imp->Hizq);
+	imprimirRec(aux->Hder);
 	}
 }
-*/
+
