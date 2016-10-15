@@ -29,10 +29,8 @@ void Arbol::Crear()
 }
 bool Arbol::AddRec(int Dato,Nodo* aux){
 	bool Res;
-	if (Dato<aux->getDato())
-	{
-		if (aux->Hizq!=NULL)
-		{
+	if (Dato<aux->getDato()){
+		if (aux->Hizq!=NULL){
 			Res=AddRec(Dato,aux->Hizq);
 		}
 		else{
@@ -42,8 +40,7 @@ bool Arbol::AddRec(int Dato,Nodo* aux){
 		}
 	}
 	else{
-		if (aux->Hder!=NULL)
-		{
+		if (aux->Hder!=NULL){
 			Res=AddRec(Dato,aux->Hder);
 		}
 		else{
@@ -153,21 +150,27 @@ void Arbol::imprimir()
 		std::cout<<"NO HAY NINGUN ELEMENTO "<<std::endl;
 	}
 	
-	std::cout<<Raiz->getDato()<<std::endl;
+	std::cout<<"\t "<<Raiz->getDato()<<std::endl;
 	imprimirRec(this->Raiz);
 
 }
 
-int Arbol::imprimirRec(Nodo* aux)
+void Arbol::imprimirRec(Nodo* aux)
 {
-	
-
-	if (aux->Hder==NULL&&aux->Hizq==NULL)
+	if (aux->Hder!=NULL&&aux->Hizq!=NULL)
 	{
-		return 0;
+		std::cout<<"\t"<<aux->Hizq->getDato()<<" ";
+		std::cout<<"\t"<<" ";
+		std::cout<<aux->Hder->getDato()<<std::endl;		
 	}
-	std::cout<<aux->Hizq->getDato()<<" ";
-	std::cout<<"\t"<<" ";
-	std::cout<<aux->Hder->getDato()<<std::endl;
+	if (aux->Hder!=NULL)
+	{		
+	imprimirRec(aux->Hder);
 	}
+
+	if (aux->Hizq!=NULL)
+	{		
+	imprimirRec(aux->Hizq);
+	}
+}
 
