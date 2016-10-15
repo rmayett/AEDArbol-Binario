@@ -14,13 +14,14 @@ bool Arbol::AddNodo(int Dato){
 }
 void Arbol::Crear()
 {
-	AddNodo(9);
+	AddNodo(4);
 	AddNodo(10);
 	AddNodo(2);
 	AddNodo(5);
 	AddNodo(8);
-	AddNodo(12);
 	AddNodo(7);
+	AddNodo(9);
+	AddNodo(12);
 	AddNodo(11);	
 	AddNodo(20);
 	AddNodo(19);
@@ -147,60 +148,26 @@ Nodo* Arbol::BusqRec(int ref,Nodo* aux){
 void Arbol::imprimir()
 {
 		
-	if (Raiz==NULL)
+	if (this->Raiz==NULL)
 	{
 		std::cout<<"NO HAY NINGUN ELEMENTO "<<std::endl;
 	}
 	
 	std::cout<<Raiz->getDato()<<std::endl;
-	return imprimirRec(Raiz);
+	imprimirRec(this->Raiz);
 
 }
 
-void Arbol::imprimirRec(Nodo* aux)
+int Arbol::imprimirRec(Nodo* aux)
 {
-	Nodo* Busqueda=aux;
 	
-	if (Busqueda->Hder==NULL&&Busqueda->Hizq==NULL)
-	{
-		std::cout<<"SOLO EXISTE LA RAIZ"<<std::endl;
-	}
-	if (Busqueda->Hizq!=NULL)
-	{
-		while(Busqueda->Hizq!=NULL)
-		{
-		ImpIzq(Busqueda->Hizq);
-		ImpDer(Busqueda->Hizq);
-		Busqueda=Busqueda->Hizq;
-		}
-	}
-	else{if (Busqueda->Hder!=NULL)
-	{
-		while(Busqueda->Hder!=NULL){
-		ImpIzq(Busqueda->Hder);
-		ImpDer(Busqueda->Hder);
-		Busqueda=Busqueda->Hder;
-		}
-	}
-	}
 
-}
-void Arbol::ImpIzq(Nodo* aux)
-{
-	while(aux->Hizq!=NULL)
+	if (aux->Hder==NULL&&aux->Hizq==NULL)
 	{
-		std::cout<<aux->Hizq->getDato()<<std::endl;
-		aux=aux->Hizq;
+		return 0;
 	}
-}
-void Arbol::ImpDer(Nodo* aux)
-{
-
+	std::cout<<aux->Hizq->getDato()<<" ";
 	std::cout<<"\t"<<" ";
-	while(aux->Hder!=NULL)
-	{
-		std::cout<<"\t"<<" ";
-		std::cout<<aux->Hder->getDato()<<std::endl;
-		aux=aux->Hder;
+	std::cout<<aux->Hder->getDato()<<std::endl;
 	}
-}
+

@@ -16,8 +16,6 @@ public:
 	void imprimir();
 
 private: 
-	void imprimirRec(Nodo* aux);
-	void ImpIzq(Nodo* aux);
-	void ImpDer(Nodo* aux);
+	int imprimirRec(Nodo* aux);
 	//~Arbol();
 };
