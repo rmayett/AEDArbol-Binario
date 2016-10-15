@@ -1,4 +1,5 @@
 /*Rodrigo Mayett Guzman
+  Daniel Manzano Saturnino
 se definen los metodos del arbol*/
 #include "Arbol.h"
 
@@ -141,7 +142,7 @@ Nodo* Arbol::BusqRec(int ref,Nodo* aux){
 	return NULL;
 }
 
-
+/*
 void Arbol::imprimir()
 {
 		
@@ -154,23 +155,23 @@ void Arbol::imprimir()
 	imprimirRec(this->Raiz);
 
 }
-
 void Arbol::imprimirRec(Nodo* aux)
 {
-	if (aux->Hder!=NULL&&aux->Hizq!=NULL)
+	Nodo*imp=aux;
+	if (imp->Hder!=NULL&&imp->Hizq!=NULL)
 	{
-		std::cout<<"\t"<<aux->Hizq->getDato()<<" ";
+		std::cout<<"\t"<<imp->Hizq->getDato()<<" ";
 		std::cout<<"\t"<<" ";
-		std::cout<<aux->Hder->getDato()<<std::endl;		
+		std::cout<<imp->Hder->getDato()<<std::endl;		
 	}
-	if (aux->Hder!=NULL)
+	if (imp->Hder!=NULL)
 	{		
-	imprimirRec(aux->Hder);
+	imprimirRec(imp->Hder);
 	}
 
-	if (aux->Hizq!=NULL)
+	if (imp->Hizq!=NULL)
 	{		
-	imprimirRec(aux->Hizq);
+	imprimirRec(imp->Hizq);
 	}
 }
-
+*/

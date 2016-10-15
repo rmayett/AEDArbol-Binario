@@ -1,4 +1,5 @@
 /*Rodrigo Mayett Guzman
+  Daniel Manzano Saturnino
 se definen los metodos de la clase*/
 #include "Nodo.h"
 class Arbol
@@ -13,9 +14,7 @@ public:
 	void intercambiar(Nodo* a,Nodo* aux);
 	Nodo* Buscar(int ref);
 	Nodo* BusqRec(int ref,Nodo* aux);
-	void imprimir();
-
-private: 
-	void imprimirRec(Nodo* aux);
+	//void imprimir();
+	//void imprimirRec(Nodo* aux);
 	//~Arbol();
 };

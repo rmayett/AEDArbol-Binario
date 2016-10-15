@@ -4,6 +4,6 @@ main()
 {
 	Arbol ar(6);
 	ar.Crear();
-	ar.imprimir();
+	//ar.imprimir();
 	return 0;
 }

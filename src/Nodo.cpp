@@ -1,4 +1,5 @@
 /*Rodrigo Mayett Guzman
+  Daniel Manzano Saturnino
 se definen los metodos del arbol*/
 #include "Nodo.h"
 
